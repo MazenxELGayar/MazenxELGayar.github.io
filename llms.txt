@@ -1,6 +1,6 @@
 # Mazen EL-Gayar
 
-> Mazen EL-Gayar is a software engineer based in Port Said, Egypt. He builds cross-platform products with Flutter and Dart, backend APIs with NestJS and Node.js, and games with Unreal Engine 5. He has 4+ years of software development experience and currently works part-time as a Senior Software Engineer at DoctorVoice while independently developing games under MazenX.
+> Mazen EL-Gayar is a software engineer and independent game developer based in Port Said, Egypt. He builds cross-platform products with Flutter and Dart, backend APIs with NestJS and Node.js, and games with Unreal Engine 5. He has 4+ years of software development experience, works part-time as a Senior Software Engineer at DoctorVoice, and founded MazenX, an independent game studio.
 
 ## Professional focus
 
@@ -8,7 +8,7 @@
 - NestJS, Node.js, and REST APIs
 - Clean Architecture, OOP, design patterns, dependency injection, CI/CD, code review, Agile/Scrum
 - Unreal Engine 5, Blueprints, C++, gameplay systems, movement, combat, and enemy AI
-- Technical coordination across QC, AI, backend, frontend, mobile, and data-analysis teams; mentoring interns and developers
+- Technical coordination across QC, AI, backend, frontend, mobile, and data-analysis teams; mentored 5+ DoctorVoice interns and 7 RASID graduates (12+ people total)
 
 ## Experience
 
@@ -20,14 +20,15 @@
 
 ## Selected projects
 
-- Crazy Kix — Unreal Engine action platformer. [GitHub source](https://github.com/MazenxELGayar/Jetpack) · [Microsoft Store](https://apps.microsoft.com/detail/9nst3zj3r8d7) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.crazykix)
-- The Bone Runner — Unreal Engine 2D action platformer. [Microsoft Store](https://apps.microsoft.com/detail/9phqzbvkflf5?hl=en-US&gl=EG) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.thebonerunner)
-- LeanGo — Flutter product family including Eye, FTE, FM, CIL, E&T, and other apps. Developed at GLI, a GRWAN Group company. [Google Play apps](https://play.google.com/store/apps/developer?id=GRWAN+GROUP+FZE) · [Apple App Store apps](https://apps.apple.com/us/developer/grwan-group-fze/id1619845290)
-- Multi-tenant ERP platform — Flutter app with four tenant-specific app flavors, delivered at FlexoNexus.
-- DoctorVoice — healthcare products built with Flutter and NestJS.
-- Open-source Flutter packages: [PayPal checkout](https://pub.dev/packages/flutter_paypal_payment_checkout_v2) · [i18n translator](https://pub.dev/packages/flutter_i18n_translator)
-- MyFlix and MyFlix Remote — connected desktop and mobile media apps.
-- Samsarly — real-estate marketplace with map-based property discovery and AI-assisted price estimation.
+- LeanGo — Flutter operations family at GLI, a GRWAN Group company. Eye supports security and field operations; FTE supports attendance and employee workflows; FM supports facilities and asset services; CIL reports on machine quality, equipment effectiveness, and operator tasks through a mobile app and dashboard. The modular, role-permission-based suite also includes GPS, face, or QR attendance; QR asset lookup; post task tracking; localization; notifications; and client-specific white-label features. Also includes E&T and related tools. [Google Play apps](https://play.google.com/store/apps/developer?id=GRWAN+GROUP+FZE) · [Apple App Store apps](https://apps.apple.com/us/developer/grwan-group-fze/id1619845290)
+- Multi-tenant ERP platform — FlexoNexus app centralizes payments, expenses, BNPL, invoices, accounts receivable, attendance, and occupancy monitoring. Delivered four Flutter app flavors: Food & Health, NDS, Restaurants, and FlexoNexus.
+- DoctorVoice — patient and doctor healthcare products with Flutter and NestJS, speech-to-text medical documentation, specialty selection, and initial report generation. Mazen coordinates QC, AI, backend, frontend, mobile, and data-analysis teams, mentors 5+ interns, and liaises between the CEO, Marketing, and technical teams.
+- Open-source Flutter packages published under MazenX: [PayPal checkout](https://pub.dev/packages/flutter_paypal_payment_checkout_v2) · [i18n translator](https://pub.dev/packages/flutter_i18n_translator) · [MazenX pub.dev profile](https://pub.dev/publishers/mazenx.dev/packages)
+- Crazy Kix — independently built Unreal Engine action platformer featuring platform movement, cannons, chasing drones, and laser attacks. [GitHub source](https://github.com/MazenxELGayar/Jetpack) · [Microsoft Store](https://apps.microsoft.com/detail/9nst3zj3r8d7) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.crazykix)
+- The Bone Runner — independently built 2D action platformer featuring combat, skeleton enemies, spikes, saws, and dungeon stages. [Source](https://github.com/MazenxELGayar/TheBoneRunner) · [Microsoft Store](https://apps.microsoft.com/detail/9phqzbvkflf5?hl=en-US&gl=EG) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.thebonerunner)
+- Gambling Addiction — Unreal Engine Blueprint arena game with randomized magic-ball effects and Bot vs Bots, Human vs Bot, and Bots vs Humans modes. [Repository](https://github.com/MazenxELGayar/gambling-addiction)
+- MyFlix and MyFlix Remote — connected Windows and Android media apps with local library organization, metadata enrichment, resume playback, and synchronized remote control. [Windows app](https://apps.microsoft.com/detail/9p61pw36ppqw) · [Android remote](https://play.google.com/store/apps/details?id=com.mazenx.myflix_remote)
+- Samsarly — real-estate marketplace with map discovery, filters, AI-assisted estimates, token-based contact and navigation, and Arabic, English, French, Spanish, German, and Turkish localization.
 
 ## Education and recognition
 
@@ -39,14 +40,17 @@ B.S. in Computers and Informatics, Suez Canal University (2023); GPA 4.0, Excell
 - English — Upper-intermediate (B2)
 - French — Elementary (A2)
 
+Samsarly supports six interface languages: Arabic, English, French, Spanish, German, and Turkish.
+
 ## Contact and profiles
 
 - Portfolio: https://mazenxelgayar.github.io/
 - Email: [Mazenxxelgayar@gmail.com](mailto:Mazenxxelgayar@gmail.com)
 - Phone: [+20 103 434 3606](tel:+201034343606)
+- WhatsApp: https://wa.me/201034343606
 - [LinkedIn](https://www.linkedin.com/in/mazen-el-gayar-995949218/)
 - [GitHub](https://github.com/MazenxELGayar/)
-- [MazenX on LinkedIn](https://www.linkedin.com/company/144794199)
+- [MazenX independent studio on LinkedIn](https://www.linkedin.com/company/144794199)
 
 ## Portfolio pages
 
