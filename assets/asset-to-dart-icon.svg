@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="albumGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="4" width="64" height="60" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Back photo card tilted -->
+  <rect x="15" y="6" width="38" height="38" rx="6" fill="#818CF8" opacity="0.6" transform="rotate(8 34 25)"/>
+  <!-- Main album frame -->
+  <rect x="8" y="12" width="46" height="42" rx="8" fill="url(#albumGrad)" filter="url(#shadow)"/>
+  <!-- Inner photo viewport -->
+  <rect x="12" y="16" width="38" height="34" rx="5" fill="#F8FAFC"/>
+  <!-- Sun / Accent -->
+  <circle cx="21" cy="24" r="3.5" fill="#F59E0B"/>
+  <!-- Mountains / Hills -->
+  <path d="M12 42 L24 29 L35 39 L40 34 L50 44 L50 45 C50 47.76 47.76 50 45 50 L17 50 C14.24 50 12 47.76 12 45 Z" fill="#3B82F6"/>
+  <path d="M30 45 L37 37 L50 48 C49.2 49.3 47.5 50 45 50 L35 50 Z" fill="#1D4ED8"/>
+</svg>

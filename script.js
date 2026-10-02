@@ -1,35 +1,228 @@
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-  });
-  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-    nav.classList.remove('open');
+const backdrop = document.getElementById('nav-backdrop');
+
+function closeNavMenu() {
+  if (!nav) return;
+  nav.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+  if (toggle) {
+    toggle.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation');
-  }));
+  }
+  document.body.classList.remove('nav-locked');
+  toggleLangDropdown(false);
 }
+
+if (toggle && nav) {
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const open = nav.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    if (backdrop) backdrop.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    document.body.classList.toggle('nav-locked', open);
+  });
+
+  if (backdrop) {
+    backdrop.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeNavMenu();
+    });
+  }
+
+  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+    closeNavMenu();
+  }));
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      closeNavMenu();
+    }
+  });
+}
+
 const themeButton = document.querySelector('.theme-toggle');
-const savedTheme = localStorage.getItem('portfolio-theme');
-const initialTheme = savedTheme === 'light' || savedTheme === 'dark'
-  ? savedTheme
-  : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+const langSelect = document.getElementById('lang-select');
+const langDropdown = document.getElementById('lang-dropdown');
+const langDropdownBtn = document.getElementById('lang-dropdown-btn');
+const langDropdownMenu = document.getElementById('lang-dropdown-menu');
+const currentLangText = document.getElementById('current-lang-text');
+const currentLangPill = document.getElementById('current-lang-pill');
+const langOptions = document.querySelectorAll('.lang-option');
+
+const LANG_CONFIG = {
+  en: { label: 'English', code: 'EN' },
+  ar: { label: 'العربية', code: 'AR' },
+  es: { label: 'Español', code: 'ES' },
+  fr: { label: 'Français', code: 'FR' },
+  de: { label: 'Deutsch', code: 'DE' },
+  ja: { label: '日本語', code: 'JA' },
+  zh: { label: '中文', code: 'ZH' },
+  it: { label: 'Italiano', code: 'IT' },
+  ru: { label: 'Русский', code: 'RU' },
+  hi: { label: 'हिन्दी', code: 'HI' },
+  ko: { label: '한국어', code: 'KO' },
+  tr: { label: 'Türkçe', code: 'TR' }
+};
+
+function toggleLangDropdown(show) {
+  if (!langDropdown || !langDropdownBtn) return;
+  const willOpen = typeof show === 'boolean' ? show : !langDropdown.classList.contains('open');
+  langDropdown.classList.toggle('open', willOpen);
+  langDropdownBtn.setAttribute('aria-expanded', String(willOpen));
+}
+
+if (langDropdownBtn) {
+  langDropdownBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleLangDropdown();
+  });
+}
+
+langOptions.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const lang = btn.getAttribute('data-lang');
+    if (lang) {
+      applyLanguage(lang, true);
+      toggleLangDropdown(false);
+    }
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if (langDropdown && langDropdown.classList.contains('open') && !langDropdown.contains(e.target)) {
+    toggleLangDropdown(false);
+  }
+});
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && langDropdown && langDropdown.classList.contains('open')) {
+    toggleLangDropdown(false);
+    langDropdownBtn?.focus();
+  }
+});
+
+function getActiveDictionary(lang) {
+  const translations = window.PORTFOLIO_TRANSLATIONS || {};
+  return translations[lang] || translations['en'] || {};
+}
+
 function setTheme(theme, persist = false) {
   document.documentElement.dataset.theme = theme;
   if (!themeButton) return;
+  const currentLang = document.documentElement.lang || 'en';
+  const dict = getActiveDictionary(currentLang);
   const target = theme === 'dark' ? 'light' : 'dark';
-  themeButton.textContent = (target === 'dark' ? '◐ Dark mode' : '☼ Light mode');
+  themeButton.textContent = target === 'dark' ? (dict.nav_theme_dark || '◐ Dark mode') : (dict.nav_theme_light || '☼ Light mode');
   themeButton.setAttribute('aria-label', 'Switch to ' + target + ' mode');
   if (persist) localStorage.setItem('portfolio-theme', theme);
 }
-setTheme(initialTheme);
-if (themeButton) themeButton.addEventListener('click', () => {
-  setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
-});
-document.querySelector('#year').textContent = new Date().getFullYear();
+
+function applyLanguage(lang, persist = false) {
+  const dict = getActiveDictionary(lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar' ? 'rtl' : 'ltr');
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    const val = dict[key];
+    if (val !== undefined) {
+      if (val.includes('<') || val.includes('&')) {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
+    }
+  });
+
+  // Update custom dropdown trigger & options
+  const info = LANG_CONFIG[lang] || { label: 'English', code: 'EN' };
+  if (currentLangText) currentLangText.textContent = info.label;
+  if (currentLangPill) currentLangPill.textContent = info.code;
+
+  langOptions.forEach((btn) => {
+    const isSelected = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', isSelected);
+    btn.setAttribute('aria-selected', String(isSelected));
+  });
+
+  if (langSelect && langSelect.value !== lang) {
+    langSelect.value = lang;
+  }
+
+  if (dict.meta_title) document.title = dict.meta_title;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && dict.meta_desc) metaDesc.setAttribute('content', dict.meta_desc);
+
+  // Sync theme button label
+  const curTheme = document.documentElement.dataset.theme || 'light';
+  setTheme(curTheme, false);
+
+  // Update see-more buttons & contribution summaries
+  document.querySelectorAll('.see-more').forEach((btn) => {
+    btn.textContent = dict.see_more || 'See more';
+  });
+  document.querySelectorAll('.contribution summary').forEach((sum) => {
+    sum.textContent = dict.my_contribution || 'My contribution';
+  });
+
+  // Update existing project dialogs
+  document.querySelectorAll('.project-card').forEach((card, index) => {
+    const dialog = document.getElementById(`project-details-${index + 1}`);
+    if (!dialog) return;
+    const info = card.querySelector('.project-info');
+    const title = info?.querySelector('h3');
+    const summary = info?.querySelector(':scope > p:not(.project-long)');
+    const longDescription = info?.querySelector('.project-long');
+    const contribution = info?.querySelector('.contribution p');
+
+    const dialogTitle = dialog.querySelector('.dialog-heading h3');
+    const dialogSummary = dialog.querySelector('.dialog-description p:first-child');
+    const dialogLong = dialog.querySelector('.dialog-description p:nth-child(2)');
+    const dialogContribHeading = dialog.querySelector('.dialog-contribution h4');
+    const dialogContrib = dialog.querySelector('.dialog-contribution p');
+
+    if (dialogTitle && title) dialogTitle.textContent = title.textContent;
+    if (dialogSummary && summary) dialogSummary.textContent = summary.textContent;
+    if (dialogLong && longDescription) dialogLong.textContent = longDescription.textContent;
+    if (dialogContribHeading) dialogContribHeading.textContent = dict.my_contributions || 'My contributions';
+    if (dialogContrib && contribution) dialogContrib.textContent = contribution.textContent;
+  });
+
+  if (persist) {
+    localStorage.setItem('portfolio-lang', lang);
+  }
+  document.documentElement.dataset.i18nReady = 'true';
+}
+
+const currentTheme = document.documentElement.dataset.theme || 'light';
+setTheme(currentTheme);
+if (themeButton) {
+  themeButton.addEventListener('click', () => {
+    setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+  });
+}
+
+if (langSelect) {
+  langSelect.addEventListener('change', (e) => {
+    applyLanguage(e.target.value, true);
+  });
+}
+
+// Initial language application
+const initialLang = window.__initialLang || localStorage.getItem('portfolio-lang') || 'en';
+applyLanguage(initialLang, false);
+
+const yearEl = document.querySelector('#year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
 const cards = document.querySelectorAll('.project-card, .timeline-item, .education-card');
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   cards.forEach((card) => card.classList.add('js-reveal'));
@@ -48,11 +241,14 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
   const contribution = info?.querySelector('.contribution p');
   if (!info || !title || !summary) return;
 
+  const currentLang = document.documentElement.lang || 'en';
+  const dict = getActiveDictionary(currentLang);
+
   const dialogId = `project-details-${index + 1}`;
   const more = document.createElement('button');
   more.className = 'see-more';
   more.type = 'button';
-  more.textContent = 'See more';
+  more.textContent = dict.see_more || 'See more';
   more.setAttribute('aria-haspopup', 'dialog');
   more.setAttribute('aria-controls', dialogId);
   summary.after(more);
@@ -69,7 +265,7 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
   const close = document.createElement('button');
   close.className = 'dialog-close';
   close.type = 'button';
-  close.setAttribute('aria-label', 'Close project details');
+  close.setAttribute('aria-label', dict.dialog_close || 'Close project details');
   close.textContent = '×';
   heading.append(dialogTitle, close);
   const full = document.createElement('div');
@@ -87,7 +283,7 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
     const contributionSection = document.createElement('section');
     contributionSection.className = 'dialog-contribution';
     const contributionHeading = document.createElement('h4');
-    contributionHeading.textContent = 'My contributions';
+    contributionHeading.textContent = dict.my_contributions || 'My contributions';
     const contributionCopy = document.createElement('p');
     contributionCopy.textContent = contribution.textContent;
     contributionSection.append(contributionHeading, contributionCopy);
