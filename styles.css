@@ -287,3 +287,132 @@ html[data-theme="dark"] .dialog-contribution { border-color:#3a4a63; border-left
 html[data-theme="dark"] .certificate-links a { color:#c7d3ff; }
 @media(max-width:850px) { .timeline-item { grid-template-columns:120px 84px minmax(0,1fr); }.experience-company { width:78px; height:60px; }.studio-heading { grid-template-columns:1fr; gap:25px; }.studio-brand { min-height:135px; }.education-card { grid-template-columns:minmax(90px,.5fr) 1.5fr; } }
 @media(max-width:600px) { .timeline-item { grid-template-columns:60px minmax(0,1fr); }.experience-company { width:60px; height:48px; }.mazenx-company { width:60px; }.studio-section { padding-top:62px; padding-bottom:65px; }.studio-heading { gap:20px; }.studio-brand { min-height:115px; }.education-card { grid-template-columns:1fr; }.education-graduation { max-height:210px; }.honors-gallery { grid-template-columns:1fr; }.honors-gallery img { height:200px; }.education-logos img { width:72px; height:60px; }.project-dialog { padding:20px; }.dialog-description p,.dialog-contribution p { font-size:12px; } }
+
+/* Brand and product-family refinements. */
+.brand-logo { width:42px; height:42px; border-radius:10px; object-fit:cover; }
+.site-footer .brand-logo { width:42px; height:42px; }
+.studio-brand { width:100%; min-height:0; display:block; overflow:hidden; padding:0; border:0; border-radius:14px; background:transparent; box-shadow:none; }
+.studio-brand img { width:100%; max-height:none; aspect-ratio:1983/793; border:1px solid #222937; border-radius:14px; object-fit:cover; }
+.leango-visual { gap:0; background:#edf1f7; }
+.leango-visual .gli-only { width:min(60%,390px); height:146px; object-fit:contain; }
+.app-logos { align-items:stretch; gap:9px; }
+.app-logo { width:86px; min-height:82px; display:flex; flex:0 0 auto; flex-direction:column; align-items:center; justify-content:center; gap:5px; overflow:hidden; padding:8px; border:1px solid #dde3ee; border-radius:8px; background:#f5f7fb; color:#45536b; text-align:center; }
+.app-logo > img.app-logo-img { position:static; width:100%; height:48px; max-width:100%; max-height:48px; display:block; padding:0; border:0; border-radius:0; background:transparent; object-fit:contain; filter:none; transform:none; }
+.app-logo > img.app-dark { display:none; }
+.app-logo > span:last-child { max-width:100%; color:inherit; font:8px var(--mono); line-height:1.3; }
+.app-logo .filter-white { filter:brightness(0) invert(1)!important; }
+.leango-apps .app-logo { width:82px; height:82px; min-height:82px; }
+.leango-apps .app-logo .cil-logo { width:100%; height:48px; max-width:100%; max-height:48px; padding:0; border:0; border-radius:0; background:transparent; transform:none; object-fit:contain; }
+.project-info .app-logos { margin-top:14px; }
+.project-info .project-links { margin-top:17px; }
+.project-info .contribution { margin-top:14px; }
+.flexo-main-logo { width:min(84%,420px); height:112px; object-fit:contain; }
+.flexo-apps .app-logo { width:100px; height:82px; }
+.flexo-apps .app-logo:has(.nds-logo) { padding:0; }
+.flexo-apps .nds-logo { height:100%!important; max-height:100%!important; }
+.foodhealth-logo { object-position:center; }
+.healthcare-visual { background:#fff; }
+.healthcare-visual .dv-logo { width:min(78%,370px); height:130px; object-fit:contain; }
+.doctorvoice-apps .app-logo { width:110px; height:90px; }
+.doctorvoice-apps .app-logo .app-logo-img { height:53px; max-height:53px; }
+.doctorvoice-apps .doctors-app { border-color:#143e40; background:#143e40; color:#fff; }
+.doctorvoice-apps .doctors-app .app-logo-img { width:100%; height:58px; max-height:58px; object-fit:contain; }
+.package-visual { background:#fff; color:#172236; }
+.package-line { color:#58657a; }
+.pubdev-logo { width:140px; height:96px; margin-bottom:3px; object-fit:contain; }
+.package-apps .app-logo { width:112px; height:94px; background:#f4f6fb; }
+.package-apps .app-logo:hover { border-color:var(--accent); transform:translateY(-2px); }
+.package-apps .package-icon { width:50px; height:48px; display:grid; place-items:center; position:relative; border-radius:12px; background:#e4ecff; color:#114eb2; font:800 28px var(--sans); letter-spacing:-.08em; }
+.package-apps .package-icon span { position:absolute; right:3px; bottom:4px; padding:1px 2px; border-radius:3px; background:#fff; color:#2272d2; font:800 9px var(--mono); letter-spacing:0; }
+.package-apps .asset-icon { background:#efe8ff; color:#5139b8; font:700 17px var(--mono); letter-spacing:-.1em; }
+.package-apps .asset-icon span { background:#5139b8; color:#fff; }
+.package-apps .i18n-icon { background:#e5f3f2; color:#137d77; font-size:19px; }
+.package-apps .i18n-icon span { background:#137d77; color:#fff; }
+.project-info .package-apps a { text-decoration:none; }
+.timeline-item { grid-template-columns:150px 106px minmax(0,1fr) 95px; }
+.experience-company { width:92px; height:92px; overflow:hidden; padding:7px; border-radius:12px; background:#f2f4f7; }
+.experience-company img { width:100%; height:100%; max-width:100%; max-height:100%; object-fit:contain; }
+.dv-company { background:#fff; }
+.dv-company .dv-light,.flexo-company .flexo-light { display:block; }
+.dv-company .dv-dark,.flexo-company .flexo-dark { display:none; }
+.mazenx-company { width:92px; height:92px; padding:5px; border-color:#282a2f; border-radius:12px; background:#050505; }
+.mazenx-company img { width:100%; height:100%; border-radius:8px; object-fit:cover; }
+.gli-company { background:#f0f2f5; }
+.rasid-company { background:#fff; }
+.education-section { display:grid; grid-template-columns:.9fr 1.1fr; gap:8vw; align-items:start; padding-top:74px; padding-bottom:76px; }
+.education-intro h2,.honors-intro h2 { margin:0; font-size:clamp(38px,4.7vw,54px); line-height:1.05; letter-spacing:-.07em; }
+.education-intro .education-graduation { width:100%; max-height:340px; margin-top:26px; border:1px solid var(--line); border-radius:14px; object-fit:cover; }
+.education-cards { display:grid; gap:14px; }
+.education-cards .education-card { grid-template-columns:100px 1fr; align-items:center; gap:18px; min-height:132px; }
+.edu-logo-tile { width:88px; height:88px; display:grid; place-items:center; overflow:hidden; padding:8px; border:1px solid #dde3ee; border-radius:10px; background:#fff; }
+.edu-logo-tile img { width:100%; height:100%; object-fit:contain; }
+.education-card h3,.certificate-panel h3,.honors-intro h3 { margin:0 0 8px; font-size:15px; }
+.education-card p { margin:4px 0; }
+.education-card .text-link { display:inline-block; margin-top:10px; }
+.honors-section { display:grid; grid-template-columns:.9fr 1.1fr; gap:8vw; align-items:start; padding-top:76px; padding-bottom:88px; border-top:1px solid var(--line); }
+.honors-intro h3 { margin-top:24px; }
+.honors-list { display:grid; gap:12px; margin:0; padding-left:18px; color:var(--muted); font-size:11px; line-height:1.8; }
+.honors-content { display:grid; gap:22px; }
+.honors-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:0; }
+.honors-gallery figure { overflow:hidden; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+.honors-gallery img { width:100%; height:150px; object-fit:cover; }
+.honors-gallery figure:nth-child(2) img { object-fit:contain; background:#e9edf2; }
+.honors-gallery figcaption { min-height:36px; padding:9px 10px; color:var(--muted); font:8px var(--mono); line-height:1.5; }
+.certificate-panel { padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+.certificate-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 14px; margin-top:14px; }
+.certificate-links a { color:var(--accent-strong); font:9px/1.55 var(--mono); text-decoration:underline; text-underline-offset:3px; }
+.certificate-links a:hover { color:var(--accent); }
+html[data-theme="dark"] .brand-logo { border:1px solid #353b49; }
+html[data-theme="dark"] .leango-visual { background:#1c2739; }
+html[data-theme="dark"] .leango-visual .gli-only { filter:brightness(0) invert(1); }
+html[data-theme="dark"] .app-logo { border-color:#39465b; background:#202c40; color:#e2e8f1; }
+html[data-theme="dark"] .app-logo > img.app-light { display:none; }
+html[data-theme="dark"] .app-logo > img.app-dark { display:block; }
+html[data-theme="dark"] .app-logo .cil-logo { background:transparent; border:0; }
+html[data-theme="dark"] .erp-visual { background:#222c3b; }
+html[data-theme="dark"] .healthcare-visual { background:#111a29; }
+html[data-theme="dark"] .doctorvoice-apps .app-logo:first-child { background:#111a29; }
+html[data-theme="dark"] .doctorvoice-apps .doctors-app { border-color:#143e40; background:#143e40; color:#fff; }
+html[data-theme="dark"] .package-visual { background:#182233; color:#f0f3fa; }
+html[data-theme="dark"] .package-line { color:#bec9dc; }
+html[data-theme="dark"] .package-apps .app-logo { background:#222f43; }
+html[data-theme="dark"] .package-apps .package-icon span { background:#f5f7fb; }
+html[data-theme="dark"] .package-apps .asset-icon span, html[data-theme="dark"] .package-apps .i18n-icon span { color:#fff; }
+html[data-theme="dark"] .experience-company { overflow:hidden; }
+html[data-theme="dark"] .dv-company { background:#111a29; }
+html[data-theme="dark"] .dv-company .dv-light,html[data-theme="dark"] .flexo-company .flexo-light { display:none; }
+html[data-theme="dark"] .dv-company .dv-dark,html[data-theme="dark"] .flexo-company .flexo-dark { display:block; }
+html[data-theme="dark"] .flexo-company { background:#111a29; }
+html[data-theme="dark"] .gli-company { background:#202c40; }
+html[data-theme="dark"] .gli-company img { filter:brightness(0) invert(1); }
+html[data-theme="dark"] .rasid-company { background:#142d58; }
+html[data-theme="dark"] .education-cards .scu-logo-tile { background:#1b2638; border-color:#3b4960; }
+html[data-theme="dark"] .education-cards .scu-logo-tile img { filter:brightness(0) invert(1); }
+html[data-theme="dark"] .education-cards .iti-logo-tile { background:#1b2638; border-color:#3b4960; }
+html[data-theme="dark"] .honors-gallery figure:nth-child(2) img { background:#1b2638; }
+html[data-theme="dark"] .certificate-panel { background:#172236; }
+html[data-theme="dark"] .certificate-links a { color:#c7d3ff; }
+@media(max-width:850px) { .education-section,.honors-section { grid-template-columns:1fr; gap:28px; }.education-intro .education-graduation { max-width:450px; max-height:280px; }.timeline-item { grid-template-columns:120px 98px minmax(0,1fr); }.experience-company { width:86px; height:86px; } }
+@media(max-width:600px) { .site-header .brand-logo { width:38px; height:38px; }.site-header .brand { gap:8px; letter-spacing:.06em; }.site-footer .brand-logo { width:38px; height:38px; }.studio-brand img { aspect-ratio:1983/793; }.timeline-item { grid-template-columns:68px minmax(0,1fr); }.experience-company { width:64px; height:64px; }.mazenx-company { width:64px; height:64px; }.education-cards .education-card { grid-template-columns:80px 1fr; gap:12px; padding:16px; }.edu-logo-tile { width:72px; height:72px; }.honors-gallery { grid-template-columns:1fr; }.honors-gallery img { height:210px; }.certificate-links { grid-template-columns:1fr; }.app-logo { width:78px; min-height:78px; }.leango-apps .app-logo { width:74px; height:78px; min-height:78px; }.flexo-apps .app-logo { width:88px; }.doctorvoice-apps .app-logo { width:98px; height:86px; }.package-apps .app-logo { width:98px; } }
+
+/* Final theme handling for transparent brand marks. */
+.leango-visual .gli-only { padding:0; border:0; border-radius:0; background:transparent; }
+.project-visual > img.app-light { display:block; }
+.project-visual > img.app-dark { display:none; }
+html[data-theme="dark"] .leango-visual .gli-only { filter:brightness(0) invert(1); }
+html[data-theme="dark"] .project-visual > img.app-light { display:none; }
+html[data-theme="dark"] .project-visual > img.app-dark { display:block; }
+html[data-theme="dark"] .app-logo .filter-white { filter:brightness(0) invert(1)!important; }
+
+html[data-theme="dark"] .leango-visual .gli-only { padding:0; border:0; border-radius:0; background:transparent; }
+
+.doctorvoice-apps .app-logo .app-logo-img { background:transparent!important; }
+html[data-theme="dark"] .doctorvoice-apps .app-logo:first-child { background:#111a29; }
+html[data-theme="dark"] .doctorvoice-apps .app-logo:first-child .app-logo-img { background:transparent!important; }
+
+.app-logo > img.app-logo-img { background-color:transparent!important; }
+html[data-theme="dark"] .app-logo { background-color:#202c40!important; }
+html[data-theme="dark"] .doctorvoice-apps .app-logo:first-child { background-color:#111a29!important; }
+html[data-theme="dark"] .doctorvoice-apps .doctors-app { background-color:#143e40!important; }
+html[data-theme="dark"] .flexo-apps .app-logo { background-color:#202c40!important; }
+html[data-theme="dark"] .leango-apps .app-logo { background-color:#202c40!important; }
