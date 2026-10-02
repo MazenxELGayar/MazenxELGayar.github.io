@@ -14,13 +14,20 @@ if (toggle && nav) {
 }
 const themeButton = document.querySelector('.theme-toggle');
 const savedTheme = localStorage.getItem('portfolio-theme');
-if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+const initialTheme = savedTheme === 'light' || savedTheme === 'dark'
+  ? savedTheme
+  : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+function setTheme(theme, persist = false) {
+  document.documentElement.dataset.theme = theme;
+  if (!themeButton) return;
+  const target = theme === 'dark' ? 'light' : 'dark';
+  themeButton.textContent = (target === 'dark' ? '◐ Dark mode' : '☼ Light mode');
+  themeButton.setAttribute('aria-label', 'Switch to ' + target + ' mode');
+  if (persist) localStorage.setItem('portfolio-theme', theme);
+}
+setTheme(initialTheme);
 if (themeButton) themeButton.addEventListener('click', () => {
-  const current = document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem('portfolio-theme', next);
-  themeButton.setAttribute('aria-label', 'Switch to ' + (next === 'dark' ? 'light' : 'dark') + ' theme');
+  setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
 const cards = document.querySelectorAll('.project-card, .timeline-item, .education-card');

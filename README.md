@@ -4,13 +4,11 @@ A lightweight, responsive portfolio for GitHub Pages. It presents Mazen's softwa
 
 ## GitHub Pages setup
 
-Recommended repository: `MazenxELGayar.github.io` under the GitHub account `MazenxELGayar`.
+Configured repository: `MazenxELGayar/MazenxELGayar.github.io`. GitHub Pages is deployed through the workflow below.
 
-1. Sign in to GitHub CLI with repository access: `gh auth login --hostname github.com --git-protocol https --scopes repo`.
-2. Create the public user-site repository and push this project: `gh repo create MazenxELGayar.github.io --public --source=. --remote=origin --push`.
-3. In **Settings → Pages**, choose **GitHub Actions** as the publishing source.
-4. The workflow in `.github/workflows/pages.yml` deploys automatically on each push to `main`. You can also start it from **Actions → Deploy portfolio to GitHub Pages → Run workflow**.
-5. After the first successful deployment, the personal site URL should be `https://mazenxelgayar.github.io/`.
+1. In **Settings → Pages**, select **GitHub Actions** as the publishing source if this has not already been set.
+2. The workflow in `.github/workflows/pages.yml` deploys automatically on each push to `main`. You can also start it from **Actions → Deploy portfolio to GitHub Pages → Run workflow**.
+3. Site URL: `https://mazenxelgayar.github.io/`.
 
 The workflow deploys the repository root as a static Pages artifact. No build dependencies, secrets, or frontend API credentials are needed. GitHub Pages recommends configuring a publishing source and supports a custom Actions workflow for deployment; this project uses GitHub's Pages configure, artifact upload, and deploy actions.
 

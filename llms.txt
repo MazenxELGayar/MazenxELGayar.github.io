@@ -20,10 +20,10 @@
 
 ## Selected projects
 
-- Crazy Kix — Unreal Engine action platformer. [Microsoft Store](https://apps.microsoft.com/detail/9nst3zj3r8d7) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.crazykix)
+- Crazy Kix — Unreal Engine action platformer. [GitHub source](https://github.com/MazenxELGayar/Jetpack) · [Microsoft Store](https://apps.microsoft.com/detail/9nst3zj3r8d7) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.crazykix)
 - The Bone Runner — Unreal Engine 2D action platformer. [Microsoft Store](https://apps.microsoft.com/detail/9phqzbvkflf5?hl=en-US&gl=EG) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.thebonerunner)
-- LeanGo — Flutter product family including Eye, FTE, FM, and CIL apps.
-- FlexoNexus ERP — Flutter multi-tenant ERP app with four client-specific app flavors.
+- LeanGo — Flutter product family including Eye, FTE, FM, CIL, E&T, and other apps. Developed at GLI, a GRWAN Group company. [Google Play apps](https://play.google.com/store/apps/developer?id=GRWAN+GROUP+FZE) · [Apple App Store apps](https://apps.apple.com/us/developer/grwan-group-fze/id1619845290)
+- Multi-tenant ERP platform — Flutter app with four tenant-specific app flavors, delivered at FlexoNexus.
 - DoctorVoice — healthcare products built with Flutter and NestJS.
 - Open-source Flutter packages: [PayPal checkout](https://pub.dev/packages/flutter_paypal_payment_checkout_v2) · [i18n translator](https://pub.dev/packages/flutter_i18n_translator)
 - MyFlix and MyFlix Remote — connected desktop and mobile media apps.
@@ -33,10 +33,17 @@
 
 B.S. in Computers and Informatics, Suez Canal University (2023); GPA 4.0, Excellent with Honors; ranked 5th in the faculty. Received Presidential Recognition for academic achievement and recognition from the university president. Certificates include ITI Flutter training, Unreal Engine 5 Blueprints (Udemy), and English B2.
 
+## Languages
+
+- Arabic — Native (C2)
+- English — Upper-intermediate (B2)
+- French — Elementary (A2)
+
 ## Contact and profiles
 
 - Portfolio: https://mazenxelgayar.github.io/
 - Email: [Mazenxxelgayar@gmail.com](mailto:Mazenxxelgayar@gmail.com)
+- Phone: [+20 103 434 3606](tel:+201034343606)
 - [LinkedIn](https://www.linkedin.com/in/mazen-el-gayar-995949218/)
 - [GitHub](https://github.com/MazenxELGayar/)
 - [MazenX on LinkedIn](https://www.linkedin.com/company/144794199)
