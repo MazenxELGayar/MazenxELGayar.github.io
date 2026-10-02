@@ -1,0 +1,46 @@
+# Mazen EL-Gayar
+
+> Mazen EL-Gayar is a software engineer based in Port Said, Egypt. He builds cross-platform products with Flutter and Dart, backend APIs with NestJS and Node.js, and games with Unreal Engine 5. He has 4+ years of software development experience and currently works part-time as a Senior Software Engineer at DoctorVoice while independently developing games under MazenX.
+
+## Professional focus
+
+- Flutter and Dart for Android, iOS, web, and Windows applications
+- NestJS, Node.js, and REST APIs
+- Clean Architecture, OOP, design patterns, dependency injection, CI/CD, code review, Agile/Scrum
+- Unreal Engine 5, Blueprints, C++, gameplay systems, movement, combat, and enemy AI
+- Technical coordination across QC, AI, backend, frontend, mobile, and data-analysis teams; mentoring interns and developers
+
+## Experience
+
+- DoctorVoice — Senior Software Engineer, part-time (May 2024–present)
+- MazenX — Founder and Independent Game Developer (July 2026–present)
+- FlexoNexus — Senior Flutter Developer, full-time (January–March 2026)
+- Grwan LLC — Flutter Developer / Project Manager, full-time (March–December 2025)
+- RASID — Flutter Developer Lead & Mentor, full-time (April 2024–March 2025)
+
+## Selected projects
+
+- Crazy Kix — Unreal Engine action platformer. [Microsoft Store](https://apps.microsoft.com/detail/9nst3zj3r8d7) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.crazykix)
+- The Bone Runner — Unreal Engine 2D action platformer. [Microsoft Store](https://apps.microsoft.com/detail/9phqzbvkflf5?hl=en-US&gl=EG) · [Google Play](https://play.google.com/store/apps/details?id=com.mazenx.thebonerunner)
+- LeanGo — Flutter product family including Eye, FTE, FM, and CIL apps.
+- FlexoNexus ERP — Flutter multi-tenant ERP app with four client-specific app flavors.
+- DoctorVoice — healthcare products built with Flutter and NestJS.
+- Open-source Flutter packages: [PayPal checkout](https://pub.dev/packages/flutter_paypal_payment_checkout_v2) · [i18n translator](https://pub.dev/packages/flutter_i18n_translator)
+- MyFlix and MyFlix Remote — connected desktop and mobile media apps.
+- Samsarly — real-estate marketplace with map-based property discovery and AI-assisted price estimation.
+
+## Education and recognition
+
+B.S. in Computers and Informatics, Suez Canal University (2023); GPA 4.0, Excellent with Honors; ranked 5th in the faculty. Received Presidential Recognition for academic achievement and recognition from the university president. Certificates include ITI Flutter training, Unreal Engine 5 Blueprints (Udemy), and English B2.
+
+## Contact and profiles
+
+- Portfolio: https://mazenxelgayar.github.io/
+- Email: [Mazenxxelgayar@gmail.com](mailto:Mazenxxelgayar@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/mazen-el-gayar-995949218/)
+- [GitHub](https://github.com/MazenxELGayar/)
+- [MazenX on LinkedIn](https://www.linkedin.com/company/144794199)
+
+## Portfolio pages
+
+- [Home, projects, experience, skills, education, contact, and résumé downloads](https://mazenxelgayar.github.io/)

@@ -1,0 +1,6 @@
+# Keep private resume and account material out of a public Pages repository.
+/resumes/
+*.docx
+.env
+.env.*
+!.env.example

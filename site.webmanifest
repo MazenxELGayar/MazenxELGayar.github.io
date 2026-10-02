@@ -1,0 +1,11 @@
+{
+  "name": "Mazen EL-Gayar — Software Engineer",
+  "short_name": "Mazen EL-Gayar",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#f6f5f0",
+  "theme_color": "#f6f5f0",
+  "icons": [
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
