@@ -1171,3 +1171,23 @@ html[dir="rtl"] .phone-link span {
   margin-left: 6px;
 }
 
+
+/* Game art uses its source aspect ratio so title lettering is never cropped. */
+.studio-games .project-visual { height:auto; aspect-ratio:16 / 9; }
+.studio-games .game-visual img,
+.studio-games .bone-visual img,
+.studio-games .addiction-visual img { position:absolute; inset:0; display:block; width:100%; height:100%; max-width:none; object-fit:contain; object-position:center; }
+.studio-games .game-visual,
+.studio-games .bone-visual,
+.studio-games .addiction-visual { background:#101722; }
+
+/* Keep the short hero facts and contact methods readable at 100% zoom. */
+.hero-meta { gap:8px 15px; }
+.hero-meta > * { white-space:nowrap; }
+.contact-methods { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; margin-top:8px; direction:ltr; }
+.contact-methods .contact-email { font-size:13px; white-space:nowrap; }
+.contact-methods .contact-email span { margin:0; }
+.certificate-links a { white-space:nowrap; font-size:8px; }
+html[dir="rtl"] .hero-meta { gap:8px 15px; }
+html[dir="rtl"] .contact-methods { direction:ltr; justify-content:flex-end; }
+@media(max-width:600px) { .contact-methods { align-items:flex-start; flex-direction:column; gap:8px; } .contact-methods .contact-email { font-size:12px; } .certificate-links a { font-size:7.5px; } }
