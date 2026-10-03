@@ -535,14 +535,22 @@ body.nav-locked {
 .honors-intro h2 { margin: 0; font-size: clamp(38px,4.7vw,54px); line-height: 1.05; letter-spacing: -.07em; }
 .honors-intro h3 { margin-top: 24px; }
 .honors-list { display: grid; gap: 12px; margin: 0 0 28px; padding-left: 18px; color: var(--muted); font-size: 11px; line-height: 1.8; }
-.honors-gallery { display: grid; grid-template-columns: 1fr; gap: 32px; margin: 0; width: 100%; }
-.honors-gallery figure { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); margin: 0; }
-.honors-gallery img { width: 100%; height: auto; max-height: 480px; object-fit: cover; display: block; }
-.honors-gallery figure:nth-child(2) img { object-fit: cover; background: #e9edf2; }
+.honors-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; width: 100%; align-items: start; }
+.honors-gallery figure { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); margin: 0; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+.honors-gallery figure:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+.honors-gallery figure.honors-featured,
+.honors-gallery figure.honors-span-2 { grid-column: 1 / -1; }
+.honors-gallery img { width: 100%; height: auto; display: block; transition: transform 0.35s ease; }
+.honors-gallery figure:hover img { transform: scale(1.02); }
 .certificate-panel { padding: 20px 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); margin-top: 26px; }
 .certificate-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px 14px; margin-top: 14px; }
 .certificate-links a { color: var(--accent-strong); font: 9px/1.55 var(--mono); text-decoration: underline; text-underline-offset: 3px; }
 .certificate-links a:hover { color: var(--accent); }
+.honors-subgallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+.honors-subgallery figure { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); margin: 0; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+.honors-subgallery figure:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
+.honors-subgallery img { width: 100%; height: auto; display: block; transition: transform 0.35s ease; }
+.honors-subgallery figure:hover img { transform: scale(1.02); }
 
 /* --- Contact --- */
 .contact-section { padding: 88px 0; background: color-mix(in srgb, var(--surface-soft) 85%, #dce4f7); }
@@ -1041,8 +1049,13 @@ html[data-theme="dark"] .project-visual > img.app-dark { display:block; }
   .site-header .brand { gap:8px; font-size:13px; }
   .site-footer .brand-logo { width:38px; height:38px; }
   .studio-section { padding-top:62px; padding-bottom:65px; }
-  .honors-gallery { grid-template-columns:1fr; }
-  .honors-gallery img { height:210px; }
+  .honors-gallery { grid-template-columns:1fr; gap:14px; }
+  .honors-gallery figure.honors-featured,
+  .honors-gallery figure.honors-span-2 { grid-column:auto; }
+  .honors-gallery img { width:100%; height:auto; }
+  .honors-subgallery { grid-template-columns:1fr; gap:12px; }
+  .honors-subgallery figure.subgallery-wide { grid-column:auto; }
+  .honors-subgallery img { width:100%; height:auto; }
   .certificate-links { grid-template-columns:1fr; }
   .app-logo { width:62px; height:62px; min-height:62px; }
   .leango-apps .app-logo { width:60px; height:62px; min-height:62px; }
