@@ -33,7 +33,7 @@ HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / "template.docx"
 OUTPUT = HERE / "output"
 PUBLIC_CV = HERE / "Mazen-EL-Gayar-CV.pdf"
-PUBLIC_VARIANT = ("software", True)
+PUBLIC_VARIANT = ("software", False)  # the full Software Engineer CV
 
 ROLES = ("software", "game", "general")
 FILE_NAMES = {
@@ -262,6 +262,20 @@ def replace_text(paragraph, text: str, plain: bool = False) -> None:
                     props.remove(node)
 
 
+def set_style_font(style, name: str, bold: bool) -> None:
+    """Sets a style's font directly, dropping the theme font that would otherwise win."""
+    rpr = style.element.get_or_add_rPr()
+    fonts = rpr.find(qn("w:rFonts"))
+    if fonts is None:
+        fonts = OxmlElement("w:rFonts")
+        rpr.insert(0, fonts)
+    for attr in ("w:asciiTheme", "w:hAnsiTheme"):
+        fonts.attrib.pop(qn(attr), None)
+    fonts.set(qn("w:ascii"), name)
+    fonts.set(qn("w:hAnsi"), name)
+    style.font.bold = bold
+
+
 def add_link(paragraph, label: str, url: str) -> None:
     rid = paragraph.part.relate_to(url, RT.HYPERLINK, is_external=True)
     link = OxmlElement("w:hyperlink")
@@ -299,6 +313,10 @@ class Resume:
             raise SystemExit(f"Missing CV template: {TEMPLATE}")
         self.role, self.short = role, short
         self.doc = Document(TEMPLATE)
+        # Arial Black has no bold face, so "bold Arial Black" gets faked by thickening the letters,
+        # which looks smudged. Headings use real Arial Bold; the name keeps Arial Black, unbolded.
+        set_style_font(self.doc.styles["Heading 1"], "Arial", bold=True)
+        set_style_font(self.doc.styles["Title"], "Arial Black", bold=False)
         self.prototypes = {
             style: deepcopy(next(p._p for p in self.doc.paragraphs if p.style.name == style))
             for style in ("Heading 1", "Heading 2", "List Bullet")

@@ -13,7 +13,7 @@ Pages on macOS or Microsoft Word on Windows:
 
 The GitHub Pages deploy (`.github/workflows/pages.yml`) builds every CV on each push to `main`,
 with LibreOffice and Microsoft's Arial fonts, and publishes all six PDFs next to this file, e.g.
-`https://mazenxelgayar.github.io/resume/Mazen_EL-Gayar_Game_Developer_1Page.pdf`. The one-page
+`https://mazenxelgayar.github.io/resume/Mazen_EL-Gayar_Game_Developer_1Page.pdf`. The full
 Software Engineer CV is also published as `resume/Mazen-EL-Gayar-CV.pdf`, the file the portfolio's
 "Download CV" buttons link to.
 
