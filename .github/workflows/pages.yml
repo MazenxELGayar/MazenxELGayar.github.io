@@ -20,9 +20,13 @@ jobs:
   cvs:
     name: Build CVs
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # to save the PDFs in resume/pdf/
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0  # full history, to see whether the CV source changed in this push
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -46,6 +50,26 @@ jobs:
           name: cvs
           path: cv-dist/*.pdf
           if-no-files-found: error
+      - name: Save the CVs in the repo (resume/pdf/)
+        # Only when the CV source changed (or on a manual run), so site-only pushes add no commits.
+        # "[skip ci]" stops this commit from starting another deploy.
+        if: github.ref == 'refs/heads/main'
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] \
+            && git cat-file -e "${{ github.event.before }}^{commit}" 2>/dev/null \
+            && git diff --quiet "${{ github.event.before }}" "${{ github.sha }}" -- resume/build_resume.py resume/template.docx; then
+            echo "CV source unchanged; nothing to save."
+            exit 0
+          fi
+          mkdir -p resume/pdf
+          find cv-dist -name 'Mazen_EL-Gayar_*.pdf' -exec cp {} resume/pdf/ \;
+          git config user.name "github-actions[bot]"
+          git config user.email "41898293+github-actions[bot]@users.noreply.github.com"
+          git add resume/pdf
+          if git diff --cached --quiet; then echo "No changes to save."; exit 0; fi
+          git commit -m "Update CV PDFs [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
       - name: Attach every built CV for checking
         # Downloadable from the run page as "cvs-check", even when the build fails.
         if: always()

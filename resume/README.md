@@ -17,8 +17,12 @@ with LibreOffice and Microsoft's Arial fonts, and publishes all six PDFs next to
 Software Engineer CV is also published as `resume/Mazen-EL-Gayar-CV.pdf`, the file the portfolio's
 "Download CV" buttons link to.
 
-So to update the CV: edit `build_resume.py`, push, and the live PDFs are replaced. PDFs are never
-committed.
+So to update the CV: edit `build_resume.py`, push, and the live PDFs are replaced.
+
+The deploy also saves all six PDFs in [`resume/pdf/`](pdf/) so you can open any version on
+GitHub, and the folder's history keeps every earlier version. It only does this when
+`build_resume.py` or `template.docx` changed, in a commit by `github-actions[bot]` marked
+`[skip ci]` (so it doesn't deploy again). Run `git pull` afterwards before your next push.
 
 The CVs and the site are separate jobs. If the CV job fails (for example, a one-page CV runs onto a
 second page), the site still deploys and keeps the CVs that were already live, and the run shows a
