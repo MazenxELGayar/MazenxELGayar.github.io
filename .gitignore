@@ -4,3 +4,8 @@
 .env
 .env.*
 !.env.example
+
+# CVs are built by the GitHub Pages deploy (resume/build_resume.py); never commit the output
+/resume/output/
+/resume/*.pdf
+!/resume/template.docx

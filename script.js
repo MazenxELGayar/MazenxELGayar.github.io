@@ -251,7 +251,9 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
   more.textContent = dict.see_more || 'See more';
   more.setAttribute('aria-haspopup', 'dialog');
   more.setAttribute('aria-controls', dialogId);
-  summary.after(more);
+  // Keep the key numbers right under the summary, above "See more".
+  const facts = info.querySelector(':scope > .project-facts');
+  (facts || summary).after(more);
 
   const dialog = document.createElement('dialog');
   dialog.className = 'project-dialog';
@@ -307,4 +309,39 @@ document.querySelectorAll('.contribution').forEach((disclosure) => {
   wrapper.className = 'contribution-body';
   body.before(wrapper);
   wrapper.append(body);
+});
+
+// Copies text with the Clipboard API, falling back to a hidden textarea for browsers that block it.
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (error) {
+    const field = document.createElement('textarea');
+    field.value = text;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.append(field);
+    field.select();
+    let copied = false;
+    try { copied = document.execCommand('copy'); } catch (fallbackError) { copied = false; }
+    field.remove();
+    return copied;
+  }
+}
+
+// Copy the email address and briefly confirm it on the button.
+document.querySelectorAll('.copy-email').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const dict = getActiveDictionary(document.documentElement.lang || 'en');
+    if (!(await copyText(button.dataset.copy))) return;
+    button.classList.add('is-copied');
+    button.textContent = dict.copied_email || 'Copied ✓';
+    clearTimeout(button.resetTimer);
+    button.resetTimer = setTimeout(() => {
+      button.classList.remove('is-copied');
+      button.textContent = getActiveDictionary(document.documentElement.lang || 'en').copy_email || 'Copy email';
+    }, 2000);
+  });
 });

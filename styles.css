@@ -814,6 +814,7 @@ html[data-theme="dark"] .doctorvoice-apps .app-logo:first-child .app-logo-img { 
 
 /* Dark mode experience companies */
 html[data-theme="dark"] .dv-company { background:#111a29; }
+html[data-theme="dark"] .penguin-company { background:#202c40; }
 html[data-theme="dark"] .dv-company .dv-light,html[data-theme="dark"] .flexo-company .flexo-light { display:none; }
 html[data-theme="dark"] .dv-company .dv-dark,html[data-theme="dark"] .flexo-company .flexo-dark { display:block; }
 html[data-theme="dark"] .flexo-company { background:#111a29; }
@@ -1213,3 +1214,21 @@ html[dir="rtl"] .phone-link span {
 html[dir="rtl"] .hero-meta { gap:8px 15px; }
 html[dir="rtl"] .contact-methods { direction:ltr; justify-content:flex-end; }
 @media(max-width:600px) { .contact-methods { align-items:flex-start; flex-direction:column; gap:8px; } .contact-methods .contact-email { font-size:12px; } .certificate-links a { font-size:7.5px; } }
+
+/* --- Recruiter helpers: availability, CV, copy email, key numbers --- */
+[hidden] { display: none !important; }
+.availability { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 18px; padding: 6px 12px; border: 1px solid #b9e4c9; border-radius: 999px; background: #ecf9f1; color: #17663a; font: 600 12px var(--sans); letter-spacing: .01em; }
+.availability-dot { width: 8px; height: 8px; border-radius: 50%; background: #22a356; box-shadow: 0 0 0 0 #22a35666; animation: availability-pulse 2s ease-out infinite; }
+@keyframes availability-pulse { 0% { box-shadow: 0 0 0 0 #22a35666; } 70% { box-shadow: 0 0 0 8px #22a35600; } 100% { box-shadow: 0 0 0 0 #22a35600; } }
+@media (prefers-reduced-motion: reduce) { .availability-dot { animation: none; } }
+.contact-inner .availability { margin: 18px 0 0; }
+.button-outline { border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.button-outline:hover { border-color: var(--accent); color: var(--accent); }
+.copy-email { align-self: center; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font: 600 12px var(--sans); cursor: pointer; transition: all .2s ease; }
+.copy-email:hover { border-color: var(--accent); color: var(--accent); }
+.copy-email.is-copied { border-color: #22a356; background: #ecf9f1; color: #17663a; }
+.project-facts { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 12px 0 0; padding: 0; list-style: none; color: var(--muted); font: 500 12px var(--sans); }
+.project-facts b { color: var(--ink); font: 800 15px var(--sans); }
+html[data-theme="dark"] .availability { border-color: #23593a; background: #12301f; color: #8fe0ae; }
+html[data-theme="dark"] .copy-email.is-copied { border-color: #23593a; background: #12301f; color: #8fe0ae; }
+@media(max-width:600px) { .copy-email { align-self:flex-start; } }
