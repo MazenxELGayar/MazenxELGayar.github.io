@@ -123,7 +123,7 @@ SHORT_SUMMARY = {
     "general": "Software and game developer with 4+ years delivering Flutter applications, NestJS backend services, and Unreal Engine games. Experienced across enterprise, healthcare, ERP, facility operations, and SaaS, from architecture through release, with cross-functional collaboration and mentoring.",
 }
 
-PENGUIN_SHORT = f"Senior Flutter Developer | Penguin (KSA) | Part-time | Oct 2026–Present — Builds two EdTech Flutter apps on one shared package for {PLATFORMS}, including Zoom-style live video classes."
+PENGUIN_SHORT = "Senior Flutter Developer | Penguin (KSA) | Part-time | Oct 2026–Present — Builds two EdTech Flutter apps (Android, iOS, Web, macOS, Windows) with Zoom-style live video classes."
 PENGUIN_FULL = f"Senior Flutter Developer | Penguin (KSA) | Part-time | Oct 2026–Present — Builds the Penguin (students and parents) and Penguin Staff (teachers and supervisors) Flutter apps on one shared package for {PLATFORMS}: Zoom-style live video classes, courses, homework, real-time chat, and QR parent linking; set up CI/CD store releases."
 
 SOFTWARE_EXPERIENCE_SHORT = [
@@ -161,10 +161,14 @@ SOFTWARE_PROJECTS = [
     "Open-source Flutter packages — PayPal checkout and i18n tools on pub.dev.",
     "MazenX Unreal Engine games — Crazy Kix, The Bone Runner, and Gambling Addiction; 2D movement, combat, enemy AI, traps, and interactive systems.",
 ]
-# The one-page CV repeats less: Penguin is already described under Experience.
+# The one-page CV repeats less: Experience and the store links already cover these details.
 SOFTWARE_PROJECTS_SHORT = [
-    f"Penguin — EdTech Flutter apps with Zoom-style live video classes on {PLATFORMS}." if line.startswith("Penguin") else line
-    for line in SOFTWARE_PROJECTS
+    "Multi-tenant ERP platform (FlexoNexus) — Shared architecture, client-specific workflows, and four white-labeled app flavors.",
+    "LeanGo applications — Contributed to most of the family, including LeanGo Eye, LeanGo FTE, LeanGo FM, LeanGo CIL, and others; facility/enterprise workflows include GPS, NFC, messaging, safety, and ticketing.",
+    "Penguin — EdTech Flutter apps with Zoom-style live video classes.",
+    "DoctorVoice — AI-assisted healthcare apps with Flutter and NestJS.",
+    "Open-source Flutter packages — PayPal checkout and i18n tools on pub.dev.",
+    "MazenX Unreal Engine games — Crazy Kix, The Bone Runner, and Gambling Addiction.",
 ]
 SOFTWARE_EXTRA_PROJECTS = [
     "MyFlix and MyFlix Remote — Connected desktop/mobile media ecosystem with synchronized playback and mobile remote control.",
