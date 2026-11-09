@@ -423,6 +423,11 @@ body.nav-locked {
 .rasid-apps .rasid-app-tile .rasid-light { display: block; }
 .rasid-apps .rasid-app-tile .rasid-dark { display: none; }
 .rasid-apps .rasid-dashboard-tile { background: #032B3E; border-color: #032B3E; }
+.penguin-visual { background: linear-gradient(135deg,#fff4ec 0%,#fde1cf 100%); }
+.penguin-visual .penguin-main-logo { width: auto; height: 150px; margin-top: 18px; object-fit: contain; filter: drop-shadow(0 12px 20px #00000026); }
+.penguin-apps .app-logo { padding: 0; }
+.penguin-apps .penguin-app-tile { padding: 8px; }
+.penguin-apps .penguin-staff-tile { background: #e57d4d; border-color: #e57d4d; }
 .myflix-visual { height: 220px; background: #050505; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .myflix-visual img { width: 100%; height: 100%; object-fit: cover; }
 .myflix-visual .visual-label { background: #171717e8; }
@@ -453,6 +458,7 @@ body.nav-locked {
 .timeline-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; white-space: nowrap; }
 .timeline-date { color: var(--muted); font: 500 11px var(--mono); letter-spacing: .03em; }
 .employment-type { color: var(--muted); font: 700 12px var(--mono); letter-spacing: .05em; }
+.employment-country { color: var(--muted); font: 10px var(--mono); letter-spacing: .05em; }
 .timeline-item h3 { margin: 0 0 6px; font-size: 16px; }.timeline-item h3 span { color: var(--muted); font-weight: 500; }
 .timeline-item p { max-width: 720px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.75; }
 .experience-company { width: 92px; height: 92px; display: grid; place-items: center; overflow: hidden; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: #ffffff; }
@@ -652,6 +658,7 @@ body.nav-locked {
 .contribution summary { transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .contribution summary:hover { transform: translateY(-1px); box-shadow: 0 5px 14px #315bd61a; }
 .experience-company { overflow: visible; }
+.experience-company.penguin-company { grid-template: 100% / 100%; overflow: hidden; }
 
 /* ============================================
    DARK THEME
@@ -671,7 +678,7 @@ html[data-theme="dark"] .project-info p.project-long { color:#b1bdd0; }
 html[data-theme="dark"] .contribution summary { border-color:#435988; background:#26375c; color:#eef2ff; }
 html[data-theme="dark"] .contribution summary:hover { background:#354b78; }
 html[data-theme="dark"] .experience-company { border-color:#3b4a63; background:#f8fafc; }
-html[data-theme="dark"] .project-topline, html[data-theme="dark"] .timeline-date, html[data-theme="dark"] .employment-type { color:#a7b5cb; }
+html[data-theme="dark"] .project-topline, html[data-theme="dark"] .timeline-date, html[data-theme="dark"] .employment-type, html[data-theme="dark"] .employment-country { color:#a7b5cb; }
 html[data-theme="dark"] .about-section, html[data-theme="dark"] .contact-section { background:#19263c; }
 html[data-theme="dark"] .language-list div, html[data-theme="dark"] .education-card { background:#172236; border-color:#30405a; }
 html[data-theme="dark"] .contact-inner h2 { color:#f0f3fa; }
@@ -796,6 +803,8 @@ html[data-theme="dark"] .rasid-apps .rasid-app-tile { background-color:#202c40!i
 html[data-theme="dark"] .rasid-apps .rasid-app-tile .rasid-light { display:none; }
 html[data-theme="dark"] .rasid-apps .rasid-app-tile .rasid-dark { display:block; }
 html[data-theme="dark"] .rasid-apps .rasid-dashboard-tile { background-color:#032B3E!important; border-color:#0c435e; }
+html[data-theme="dark"] .penguin-visual { background: linear-gradient(135deg,#2a1d17 0%,#3a2418 100%); }
+html[data-theme="dark"] .penguin-apps .penguin-staff-tile { background-color:#e57d4d!important; border-color:#e57d4d; }
 html[data-theme="dark"] .flexo-apps .app-logo { background-color:#202c40!important; }
 html[data-theme="dark"] .leango-apps .app-logo { background-color:#202c40!important; }
 html[data-theme="dark"] .app-logo > img.app-logo-img { background-color:transparent!important; }

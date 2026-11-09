@@ -1,6 +1,6 @@
 # Mazen EL-Gayar — Senior Software Engineer & Independent Game Developer
 
-> Mazen EL-Gayar is a senior software engineer and independent game developer based in Port Said, Egypt. He has 4+ years of experience building production-ready cross-platform products with Flutter and Dart, backend APIs with NestJS and Node.js, and independently published games with Unreal Engine 5. He works part-time as a Senior Software Engineer at DoctorVoice and founded MazenX, an independent game studio. He has delivered 20+ live projects, mentored 12+ interns and graduates, and contributed open-source packages to the Flutter ecosystem on pub.dev.
+> Mazen EL-Gayar is a senior software engineer and independent game developer based in Port Said, Egypt. He has 4+ years of experience building production-ready cross-platform products with Flutter and Dart, backend APIs with NestJS and Node.js, and independently published games with Unreal Engine 5. He works part-time as a Senior Software Engineer at DoctorVoice (Egypt) and as a Senior Flutter Developer at Penguin (Saudi Arabia), and founded MazenX, an independent game studio. He has delivered 20+ live projects, mentored 12+ interns and graduates, and contributed open-source packages to the Flutter ecosystem on pub.dev.
 
 ## Professional focus
 
@@ -12,6 +12,7 @@
 
 ## Experience
 
+- **Penguin** (Saudi Arabia) — Senior Flutter Developer, part-time (Oct 2026–present). Builds the Penguin and Penguin Staff Flutter apps on one shared package, including Zoom-style live video classes; runs on Android, iOS, web, macOS, and Windows.
 - **DoctorVoice** — Senior Software Engineer, part-time (May 2024–present). Builds Flutter products and NestJS APIs; coordinates cross-functional teams; mentors interns.
 - **MazenX Studio** — Founder & Independent Game Developer (July 2026–present). Creates and publishes original Unreal Engine games for Android and Windows.
 - **FlexoNexus** — Senior Flutter Developer, full-time (January–March 2026). Multi-tenant ERP platform with four branded Flutter app flavors.
@@ -23,7 +24,8 @@
 ### Enterprise & Healthcare
 - **LeanGo** — Flutter operations family at GLI (GRWAN Group). Eye (security), FTE (employee operations), FM (facility management), CIL (machine quality dashboards). Modular, role-based, white-label suite. [Google Play](https://play.google.com/store/apps/developer?id=GRWAN+GROUP+FZE) · [App Store](https://apps.apple.com/us/developer/grwan-group-fze/id1619845290)
 - **Multi-tenant ERP (FlexoNexus)** — Payments, invoicing, BNPL, attendance, occupancy. Four Flutter app flavors: Food & Health, NDS, Restaurants, FlexoNexus core.
-- **DoctorVoice** — AI-assisted patient and doctor healthcare platform. Flutter + NestJS. Speech-to-text medical documentation and report workflows. [Website](https://doctorvoice.net/) · [Google Play](https://play.google.com/store/apps/developer?id=DoctorVoice)
+- **DoctorVoice** — AI-assisted patient and doctor healthcare platform. Flutter + NestJS. Speech-to-text medical documentation and report workflows. Runs on Android, iOS, web, macOS, and Windows. [Website](https://doctorvoice.net/) · [Google Play](https://play.google.com/store/apps/developer?id=DoctorVoice)
+- **Penguin** — Saudi online-learning platform: Penguin (students and parents) and Penguin Staff (teachers and supervisors) Flutter apps built on one shared package. Courses, Zoom-style live video classes, homework, AI practice, QR parent linking, real-time chat. Runs on every platform: Android, iOS, web, macOS, and Windows. [Website](https://penguin.com.sa/)
 
 ### Developer Tooling
 - **Flutter packages on pub.dev**: [PayPal Checkout](https://pub.dev/packages/flutter_paypal_payment_checkout_v2) · [i18n Translator](https://pub.dev/packages/flutter_i18n_translator) · [asset_to_dart](https://pub.dev/packages/asset_to_dart) · [MazenX pub.dev profile](https://pub.dev/publishers/mazenx.dev/packages)
