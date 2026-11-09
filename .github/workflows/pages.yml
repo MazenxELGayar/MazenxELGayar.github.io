@@ -38,9 +38,17 @@ jobs:
       - name: Build CVs
         # Builds all six variants, publishes every PDF in resume/, and stops the deploy if a
         # one-page CV runs onto a second page, so a broken CV never goes live.
-        run: |
-          python resume/build_resume.py --strict --publish resume
-          rm -rf resume/output
+        run: python resume/build_resume.py --strict --publish resume
+      - name: Attach CVs to this run
+        # Lets you download and check the PDFs from the run page, even when the build fails.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cvs
+          path: resume/output/*.pdf
+          if-no-files-found: ignore
+      - name: Remove CV build files from the site
+        run: rm -rf resume/output
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact

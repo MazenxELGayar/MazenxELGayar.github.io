@@ -161,6 +161,11 @@ SOFTWARE_PROJECTS = [
     "Open-source Flutter packages — PayPal checkout and i18n tools on pub.dev.",
     "MazenX Unreal Engine games — Crazy Kix, The Bone Runner, and Gambling Addiction; 2D movement, combat, enemy AI, traps, and interactive systems.",
 ]
+# The one-page CV repeats less: Penguin is already described under Experience.
+SOFTWARE_PROJECTS_SHORT = [
+    f"Penguin — EdTech Flutter apps with Zoom-style live video classes on {PLATFORMS}." if line.startswith("Penguin") else line
+    for line in SOFTWARE_PROJECTS
+]
 SOFTWARE_EXTRA_PROJECTS = [
     "MyFlix and MyFlix Remote — Connected desktop/mobile media ecosystem with synchronized playback and mobile remote control.",
     "Samsarly — Real-estate marketplace with map-based property search and AI-assisted price estimation.",
@@ -375,7 +380,7 @@ class Resume:
         self.heading("Technical skills")
         self.bullets(SOFTWARE_SKILLS_SHORT if self.short else SOFTWARE_SKILLS_FULL)
         self.heading("Selected projects")
-        self.bullets(SOFTWARE_PROJECTS)
+        self.bullets(SOFTWARE_PROJECTS_SHORT if self.short else SOFTWARE_PROJECTS)
         self.game_stores()
         self.crazykix_source()
         if not self.short:
