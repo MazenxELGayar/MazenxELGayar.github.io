@@ -18,8 +18,11 @@ Software Engineer CV is also published as `resume/Mazen-EL-Gayar-CV.pdf`, the fi
 "Download CV" buttons link to.
 
 So to update the CV: edit `build_resume.py`, push, and the live PDFs are replaced. PDFs are never
-committed. If a one-page CV runs onto a second page, the deploy stops and the site keeps the
-previous version.
+committed.
+
+The CVs and the site are separate jobs. If the CV job fails (for example, a one-page CV runs onto a
+second page), the site still deploys and keeps the CVs that were already live, and the run shows a
+warning. Every run attaches the CVs it built as "cvs-check", so you can see what went wrong.
 
 ## Build locally
 

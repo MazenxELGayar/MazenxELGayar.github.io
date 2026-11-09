@@ -15,10 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Builds the six CVs. If this job fails, the site still deploys (see below) and keeps the
+  # CVs that are live now.
+  cvs:
+    name: Build CVs
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -36,19 +36,56 @@ jobs:
           sudo fc-cache -f
           pip install python-docx
       - name: Build CVs
-        # Builds all six variants, publishes every PDF in resume/, and stops the deploy if a
-        # one-page CV runs onto a second page, so a broken CV never goes live.
-        run: python resume/build_resume.py --strict --publish resume
-      - name: Attach CVs to this run
-        # Lets you download and check the PDFs from the run page, even when the build fails.
-        if: always()
+        # Fails if a one-page CV runs onto a second page, so a broken CV never goes live.
+        run: |
+          python resume/build_resume.py --strict --publish cv-dist
+          cp resume/Mazen-EL-Gayar-CV.pdf cv-dist/
+      - name: Hand the CVs to the site deploy
         uses: actions/upload-artifact@v4
         with:
           name: cvs
+          path: cv-dist/*.pdf
+          if-no-files-found: error
+      - name: Attach every built CV for checking
+        # Downloadable from the run page as "cvs-check", even when the build fails.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cvs-check
           path: resume/output/*.pdf
           if-no-files-found: ignore
-      - name: Remove CV build files from the site
-        run: rm -rf resume/output
+
+  # Deploys the site whether or not the CV job passed.
+  deploy:
+    name: Deploy site
+    needs: cvs
+    if: always()
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Add the new CVs
+        if: needs.cvs.result == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: cvs
+          path: resume
+      - name: Keep the live CVs (CV build failed)
+        # A Pages deploy replaces the whole site, so re-publish the CVs that are live now;
+        # otherwise the Download CV buttons would break. Names match FILE_NAMES in build_resume.py.
+        if: needs.cvs.result != 'success'
+        run: |
+          for name in Mazen-EL-Gayar-CV \
+            Mazen_EL-Gayar_Software_Engineer_1Page Mazen_EL-Gayar_Software_Engineer_Full \
+            Mazen_EL-Gayar_Game_Developer_1Page Mazen_EL-Gayar_Game_Developer_Full \
+            Mazen_EL-Gayar_General_1Page Mazen_EL-Gayar_General_International_Full; do
+            curl -fsSL -o "resume/$name.pdf" "https://mazenxelgayar.github.io/resume/$name.pdf" \
+              || echo "::warning::Could not keep the live $name.pdf"
+          done
+          echo "::warning::CV build failed; the site was deployed with the CVs that were already live."
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
