@@ -264,6 +264,8 @@ html[dir="rtl"] .lang-option:hover {
   height: 40px;
   min-height: 40px;
   padding: 0 16px;
+  flex-shrink: 0;
+  white-space: nowrap;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: color-mix(in srgb, var(--surface) 88%, #edf2fb);
@@ -426,10 +428,11 @@ body.nav-locked {
 .penguin-visual { background: linear-gradient(135deg,#fff4ec 0%,#fde1cf 100%); }
 .penguin-visual .penguin-main-logo { width: auto; height: 150px; margin-top: 18px; object-fit: contain; filter: drop-shadow(0 12px 20px #00000026); }
 .penguin-apps .app-logo { padding: 0; }
+.myflix-apps .app-logo, html[data-theme="dark"] .myflix-apps .app-logo { padding: 0; background: #000; border-color: #000; }
 .penguin-apps .penguin-app-tile { padding: 8px; }
 .penguin-apps .penguin-staff-tile { background: #e57d4d; border-color: #e57d4d; }
 .myflix-visual { height: 220px; background: #050505; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-.myflix-visual img { width: 100%; height: 100%; object-fit: cover; }
+.myflix-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 35% center; }
 .myflix-visual .visual-label { background: #171717e8; }
 .aware-visual { height: 220px; background: #0c1524; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .aware-visual .aware-logo { max-height: 155px; width: auto; max-width: 82%; object-fit: contain; filter: drop-shadow(0 10px 24px #00000045); }
@@ -486,6 +489,11 @@ body.nav-locked {
 .app-logo .filter-white { filter: brightness(0) invert(1)!important; }
 .leango-apps .app-logo { width: 68px; height: 68px; min-height: 68px; }
 .leango-apps .app-logo .cil-logo { width: 100%; height: 100%; max-width: 100%; max-height: 100%; padding: 0; border: 0; border-radius: 0; background: transparent; transform: none; object-fit: contain; }
+.leango-apps .cil-dashboard-tile { position: relative; }
+.leango-apps .cil-dashboard-tile .cil-logo { width: 78%; height: 78%; }
+.app-logo .app-logo-caption { position: absolute; right: 4px; bottom: 3px; padding: 1px 4px; border-radius: 3px; background: var(--accent, #3b5bdb); color: #fff; font: 700 7px var(--mono); }
+.leango-apps .glyph-tile { padding: 14px; }
+.app-logo .filter-ink { filter: brightness(0)!important; opacity: .82; }
 .project-info .app-logos { margin-top: 14px; }
 .project-info .project-links { margin-top: 17px; }
 .project-info .contribution { margin-top: 14px; }
@@ -847,6 +855,12 @@ html[data-theme="dark"] .project-visual > img.app-dark { display:block; }
 /* ============================================
    RESPONSIVE — TABLET & MOBILE NAV BREAKPOINT
    ============================================ */
+/* Medium windows: the full nav and the brand text don't both fit, so the logo stands alone. */
+.site-header { gap: 20px; }
+@media(min-width:851px) and (max-width:1180px) {
+  .site-header .brand > span { display: none; }
+  .site-nav { gap: 18px; }
+}
 @media(max-width:850px) {
   .section-wrap { padding-inline:24px; }.hero { grid-template-columns:1fr; padding-top:65px; gap:34px; }.hero-art { width:min(100%,570px); margin-inline:auto; }
   .project-grid { gap:13px; }.project-info { padding:17px; }.project-info p { min-height:76px; }

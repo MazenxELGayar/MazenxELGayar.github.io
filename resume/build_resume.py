@@ -70,8 +70,9 @@ LINKS = {
     "flexonexus": ("FlexoNexus", "https://www.linkedin.com/company/flexonexus"),
     "rasid": ("RASID", "https://rasid.com.eg"),
     "rasid_google_play": ("RASID Google Play", "https://play.google.com/store/apps/developer?id=Rasid+L.L.C&hl=en"),
+    "myflix_windows": ("MyFlix Plus Windows", "https://apps.microsoft.com/detail/9p61pw36ppqw"),
+    "myflix_plus_android": ("MyFlix Plus Android", "https://play.google.com/apps/testing/com.mazenx.myflix_plus"),
     "myflix_remote": ("MyFlix Remote", "https://play.google.com/store/apps/details?id=com.mazenx.myflix_remote"),
-    "myflix_windows": ("MyFlix Windows", "https://apps.microsoft.com/detail/9p61pw36ppqw"),
     "samsarly": ("Samsarly project", "https://drive.google.com/drive/folders/1vXvlVPVPDqettWt_7VDlilIxYMwcqb-j?usp=sharing"),
     "bsc": ("BSc certificate", "https://drive.google.com/file/d/1AxyaEUN3p8mVAFbysw71h2R3P54kZodg/view?usp=drive_link"),
     "transcript": ("Transcript", "https://drive.google.com/drive/folders/1G2ebxA9ZLFZMTs11qvQE98O3z7seSj4E?usp=drive_link"),
@@ -139,7 +140,7 @@ SOFTWARE_EXPERIENCE_FULL = [
     f"Senior Software Engineer | DoctorVoice (Egypt) | Part-time | May 2024–Present — Builds Flutter apps for {PLATFORMS} and NestJS APIs; managed QC, AI, backend, frontend, mobile, and data-analysis teams; served as liaison between the CEO/Marketing and tech teams; mentored 5+ interns.",
     "Independent Game Developer | MazenX | Jul 2026–Present — Founded the studio and independently develops, tests, and publishes Unreal Engine games for Android and Windows using C++ and Blueprints.",
     "Senior Flutter Developer | FlexoNexus (KSA) | Full-time | Jan–Mar 2026 — Built a multi-tenant ERP mobile app; delivered four client flavors using shared architecture and client-specific workflows; supported controlled store releases.",
-    "Flutter Developer / Project Manager | Grwan LLC (UAE) | Full-time | Mar–Dec 2025 — Led LeanGo Eye, FTE, FM, CIL, and related app development; coordinated Jira work and staged Play Store/App Store releases.",
+    "Flutter Developer / Project Manager | Grwan LLC (UAE) | Full-time | Mar–Dec 2025 — Led LeanGo Eye, FTE, FM, CIL and its web dashboard, WMS, and E&T development; coordinated Jira work and staged Play Store/App Store releases.",
     "Flutter Developer Lead & Mentor | RASID (Egypt) | Full-time | Apr 2024–Mar 2025 — Mentored 7+ developers in Flutter, Dart, clean architecture, OOP, and state management; built RASID and Admin apps; performed reviews and coordinated releases.",
     "Flutter Package Publisher | pub.dev | 2025–Present — Published reusable Flutter packages including PayPal checkout, i18n translation tooling, and utilities.",
 ]
@@ -155,7 +156,7 @@ SOFTWARE_SKILLS_FULL = [
 ]
 SOFTWARE_PROJECTS = [
     "Multi-tenant ERP platform (FlexoNexus) — Shared architecture, client-specific workflows, and four white-labeled app flavors.",
-    "LeanGo applications — Contributed to most of the family, including LeanGo Eye, LeanGo FTE, LeanGo FM, LeanGo CIL, and others; facility/enterprise workflows include GPS, NFC, messaging, safety, and ticketing.",
+    "LeanGo applications — Contributed to most of the family, including LeanGo Eye, FTE, FM, CIL and its web dashboard, WMS, and E&T; facility/enterprise workflows include GPS, NFC, messaging, safety, and ticketing.",
     f"Penguin — Saudi online-learning platform: student/parent and staff Flutter apps on one shared package, with Zoom-style live video classes, on {PLATFORMS}.",
     "DoctorVoice — AI-assisted healthcare applications with Flutter clients and NestJS backend services.",
     "Open-source Flutter packages — PayPal checkout and i18n tools on pub.dev.",
@@ -164,14 +165,14 @@ SOFTWARE_PROJECTS = [
 # The one-page CV repeats less: Experience and the store links already cover these details.
 SOFTWARE_PROJECTS_SHORT = [
     "Multi-tenant ERP platform (FlexoNexus) — Shared architecture, client-specific workflows, and four white-labeled app flavors.",
-    "LeanGo applications — Contributed to most of the family, including LeanGo Eye, LeanGo FTE, LeanGo FM, LeanGo CIL, and others; facility/enterprise workflows include GPS, NFC, messaging, safety, and ticketing.",
+    "LeanGo applications — Contributed to most of the family, including LeanGo Eye, FTE, FM, CIL and its web dashboard, WMS, and E&T; facility/enterprise workflows include GPS, NFC, messaging, safety, and ticketing.",
     "Penguin — EdTech Flutter apps with Zoom-style live video classes.",
     "DoctorVoice — AI-assisted healthcare apps with Flutter and NestJS.",
     "Open-source Flutter packages — PayPal checkout and i18n tools on pub.dev.",
     "MazenX Unreal Engine games — Crazy Kix, The Bone Runner, and Gambling Addiction.",
 ]
 SOFTWARE_EXTRA_PROJECTS = [
-    "MyFlix and MyFlix Remote — Connected desktop/mobile media ecosystem with synchronized playback and mobile remote control.",
+    "MyFlix Plus and MyFlix Remote — Personal streaming service for your own videos on Windows, macOS, Linux, Android, Android TV and iOS, built solo in Flutter: mpv-based player, streaming-style library with online subtitles and artwork search, LAN pairing by QR or code, screen mirroring and video broadcast to phones, the phone as an audio output, synchronized group watching, Android home-screen widgets, and CI/CD pipelines that release the Windows app to the Microsoft Store and the Android apps to Google Play from a git tag.",
     "Samsarly — Real-estate marketplace with map-based property search and AI-assisted price estimation.",
 ]
 
@@ -210,13 +211,13 @@ GENERAL_EXPERIENCE = [
 ]
 GENERAL_PROJECTS = [
     "Multi-tenant ERP platform (FlexoNexus) — Shared architecture, client-specific workflows, and four app flavors.",
-    "LeanGo applications — Contributed to most of the family, including LeanGo Eye, LeanGo FTE, LeanGo FM, LeanGo CIL, and others; facility-management and enterprise-operations products.",
+    "LeanGo applications — Contributed to most of the family, including LeanGo Eye, FTE, FM, CIL and its web dashboard, WMS, and E&T; facility-management and enterprise-operations products.",
     f"Penguin — EdTech Flutter apps with Zoom-style live video classes on {PLATFORMS}.",
     "DoctorVoice — AI-assisted healthcare apps with Flutter and NestJS.",
     "MazenX Games — Crazy Kix, The Bone Runner, Gambling Addiction; Unreal Engine, C++, and Blueprints.",
 ]
 GENERAL_EXTRA_PROJECTS = [
-    "MyFlix and MyFlix Remote — Connected desktop/mobile media ecosystem with synchronized playback and remote control.",
+    "MyFlix Plus and MyFlix Remote — Personal streaming service for your own videos on desktop, Android, Android TV and iOS, with a phone remote, screen mirroring and video broadcast to phones, the phone as a speaker, and synchronized group watching; built solo in Flutter with CI/CD to the Microsoft Store and Google Play.",
     "Samsarly — Real-estate marketplace with map-based property search and AI-assisted price estimation.",
     "Open-source Flutter packages — Published PayPal checkout integration and i18n translation tooling on pub.dev.",
 ]
@@ -377,6 +378,12 @@ class Resume:
     def game_stores(self, label: str = "MazenX game stores:") -> None:
         self.labelled_links(label, [(key, LINKS[key][0]) for key in GAME_STORES])
 
+    def myflix_links(self) -> None:
+        self.labelled_links(
+            "MyFlix links:",
+            [("myflix_windows", "Plus for Windows"), ("myflix_plus_android", "Plus for Android"), ("myflix_remote", "Remote for Android")],
+        )
+
     def crazykix_source(self) -> None:
         self.labelled_links("Crazy Kix source code:", [("crazykix_github", "GitHub repository")])
 
@@ -408,6 +415,7 @@ class Resume:
         if not self.short:
             self.heading("Additional product work")
             self.bullets(SOFTWARE_EXTRA_PROJECTS)
+            self.myflix_links()
         self.education()
         if not self.short:
             self.all_links()
@@ -442,6 +450,7 @@ class Resume:
         if not self.short:
             self.heading("Additional projects")
             self.bullets(GENERAL_EXTRA_PROJECTS)
+            self.myflix_links()
         self.education()
         if not self.short:
             self.all_links()

@@ -22,7 +22,7 @@
 ## Selected projects
 
 ### Enterprise & Healthcare
-- **LeanGo** — Flutter operations family at GLI (GRWAN Group). Eye (security), FTE (employee operations), FM (facility management), CIL (machine quality dashboards). Modular, role-based, white-label suite. [Google Play](https://play.google.com/store/apps/developer?id=GRWAN+GROUP+FZE) · [App Store](https://apps.apple.com/us/developer/grwan-group-fze/id1619845290)
+- **LeanGo** — Flutter operations family at GLI (GRWAN Group). Eye (security), FTE (employee operations), FM (facility management), CIL (machine quality app and web dashboard), WMS, and E&T — 7 apps. Modular, role-based, white-label suite. [Google Play](https://play.google.com/store/apps/developer?id=GRWAN+GROUP+FZE) · [App Store](https://apps.apple.com/us/developer/grwan-group-fze/id1619845290)
 - **Multi-tenant ERP (FlexoNexus)** — Payments, invoicing, BNPL, attendance, occupancy. Four Flutter app flavors: Food & Health, NDS, Restaurants, FlexoNexus core.
 - **DoctorVoice** — AI-assisted patient and doctor healthcare platform. Flutter + NestJS. Speech-to-text medical documentation and report workflows. Runs on Android, iOS, web, macOS, and Windows. [Website](https://doctorvoice.net/) · [Google Play](https://play.google.com/store/apps/developer?id=DoctorVoice)
 - **Penguin** — Saudi online-learning platform: Penguin (students and parents) and Penguin Staff (teachers and supervisors) Flutter apps built on one shared package. Courses, Zoom-style live video classes, homework, AI practice, QR parent linking, real-time chat. Runs on every platform: Android, iOS, web, macOS, and Windows. [Website](https://penguin.com.sa/)
@@ -36,7 +36,7 @@
 - **Gambling Addiction** — Blueprint arena game with randomized magic-ball effects. [GitHub](https://github.com/MazenxELGayar/gambling-addiction)
 
 ### Personal & Graduation Projects
-- **MyFlix + Remote** — Connected Windows media player and Android remote. [Windows](https://apps.microsoft.com/detail/9p61pw36ppqw) · [Android Remote](https://play.google.com/store/apps/details?id=com.mazenx.myflix_remote)
+- **MyFlix Plus + Remote** — Personal streaming service for your own videos on Windows, macOS, Linux, Android, Android TV and iOS, with a phone remote (pairing by QR or code, screen mirroring and video broadcast to phones, the phone as a speaker, synced group watching, home-screen widgets) and CI/CD releases to the Microsoft Store and Google Play. [Windows](https://apps.microsoft.com/detail/9p61pw36ppqw) · [Android](https://play.google.com/apps/testing/com.mazenx.myflix_plus) · [Android Remote](https://play.google.com/store/apps/details?id=com.mazenx.myflix_remote)
 - **Samsarly** — Graduation project: Flutter real-estate marketplace with map discovery, AI price estimation, token economy, and 6-language localization. [Graduation Book](https://drive.google.com/drive/folders/1Np1pWll0sJov6dVZNhjZiWiKsYhw4dZK)
 
 ## Education and recognition
